@@ -1,23 +1,32 @@
-import logo from './logo.svg';
+import React, { useState } from 'react';
+import Header from './components/Hedaer';
+import ResumeForm from './components/ResumeForm';
+import ResumePreview from './components/ResumePreview';
+import Footer from './components/Footer';
 import './App.css';
 
 function App() {
+  const [resumeData, setResumeData] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    education: '',
+    experience: '',
+    skills: ''
+  });
+
+  const updateResumeData = (newData) => {
+    setResumeData({ ...resumeData, ...newData });
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header />
+      <div className="content">
+        <ResumeForm updateResumeData={updateResumeData} resumeData={resumeData} />
+        <ResumePreview resumeData={resumeData} />
+      </div>
+      <Footer />
     </div>
   );
 }

@@ -1,38 +1,112 @@
+/* General Styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
 .App {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.header {
+  background-color: #0744be;
+  padding: 20px;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding: 20px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.resume-form {
+  width: 45%;
+}
+
+.resume-form input,
+.resume-form textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.resume-preview {
+  width: 45%;
+  border: 1px solid #ddd;
+  padding: 20px;
+}
+
+.resume-section {
+  margin-bottom: 20px;
+}
+
+.footer {
+  background-color: #00194b;
+  color: white;
+  padding: 10px;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+}
+
+/* Mobile Responsive Styles */
+@media (max-width: 768px) {
+  .content {
+    flex-direction: column; /* Stacks elements vertically */
+    align-items: center; /* Center the items */
   }
-  to {
-    transform: rotate(360deg);
+
+  .resume-form,
+  .resume-preview {
+    width: 90%; /* Expand the width to almost full screen */
+    margin-bottom: 20px; /* Add spacing between form and preview */
   }
+}
+
+/* General Styling */
+.resume-form label {
+  display: inline-block;
+  width: auto;
+  margin-right: 10px;
+}
+
+.skills-section label {
+  display: inline-flex;
+  align-items: center;
+  margin-right: 15px;
+}
+
+.resume-form input[type="checkbox"] {
+  margin-right: 5px;
+}
+
+.project-section {
+  margin-bottom: 20px;
+}
+
+.resume-preview .resume-section {
+  margin-bottom: 20px;
+}
+.skills-column {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+
+.skills-column label {
+  margin-bottom: 10px;
+}
+
+.resume-preview .resume-section {
+  margin-bottom: 20px;
+}
+
+
+h3,h4{
+  color: #0744be;
 }
